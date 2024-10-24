@@ -8,6 +8,11 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
+/* Side bar */
+.logo {
+  margin-inline: auto;
+}
+
 /* Header */
 
 .header {

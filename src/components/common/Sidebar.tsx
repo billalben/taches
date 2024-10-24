@@ -81,11 +81,23 @@ const Sidebar = () => {
           }}
         >
           {isOpen ? (
-            <img src={Logo2Icon} alt="" />
+            <img src={Logo2Icon} className="logo" alt="logo" />
           ) : (
-            <img src={LogoIcon} alt="" width={28} height={28} />
+            <img
+              src={LogoIcon}
+              className="logo"
+              alt="logo"
+              width={24}
+              height={24}
+            />
           )}
-          <IconButton onClick={handleToggleSidebar} size="small">
+          <IconButton
+            onClick={handleToggleSidebar}
+            size="small"
+            sx={{
+              marginInline: "auto",
+            }}
+          >
             <MenuIcon />
           </IconButton>
         </Box>

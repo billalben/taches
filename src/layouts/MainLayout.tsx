@@ -1,4 +1,4 @@
-import Header from "@/components/common/Header";
+import Header from "@/components/common/header/Header";
 import Sidebar from "@/components/common/Sidebar";
 import { Box, Typography } from "@mui/material";
 import { Outlet } from "react-router-dom";

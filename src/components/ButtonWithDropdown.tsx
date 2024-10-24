@@ -5,10 +5,10 @@ import DropdownMenu from "./DropdownMenu";
 import { menuItemsData } from "@/data";
 
 const ButtonWithDropdown = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget as HTMLElement);
   };
 
   const handleClose = () => {
