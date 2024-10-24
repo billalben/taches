@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.header .right,
+.header .left {
+  display: flex;
+  align-items: center;
+}
+
+.header .right,
+.header .left {
+  gap: 1rem;
+}
+
+.header .user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.user-meta .name {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.user-meta .role {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: right;
+}
