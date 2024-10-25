@@ -1,11 +1,19 @@
 import ButtonWithDropdown from "@/components/ButtonWithDropdown";
-import { Fab } from "@mui/material";
+import { Fab, Typography } from "@mui/material";
 import CropFreeOutlinedIcon from "@mui/icons-material/CropFreeOutlined";
 
 const HeaderLeft = () => {
   return (
     <div className="left">
-      <h2 className="title">Tâches</h2>
+      <Typography
+        variant="h4"
+        sx={{
+          fontWeight: "600",
+          fontSize: { xs: "1.5rem", sm: "2rem", md: "2.25rem" },
+        }}
+      >
+        Tâches
+      </Typography>
       <Fab
         size="medium"
         aria-label="add"

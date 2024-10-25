@@ -102,7 +102,7 @@ const Sidebar = () => {
           </IconButton>
         </Box>
 
-        <Divider />
+        <Divider sx={{ backgroundColor: "#26A4DA", height: "1.5px" }} />
 
         <List sx={{ flexGrow: "1", marginTop: "82px" }}>
           {/* Sidebar items */}

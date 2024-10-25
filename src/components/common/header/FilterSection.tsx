@@ -39,10 +39,7 @@ const FilterSection = ({
   tasksPriority,
 }: TProps) => {
   return (
-    <Stack
-      direction="row"
-      sx={{ flexWrap: "wrap", gap: 2, padding: "1rem 2rem" }}
-    >
+    <Stack direction="row" sx={{ flexWrap: "wrap", gap: 2, marginTop: "1rem" }}>
       <Autocomplete
         disablePortal
         options={tasksType}
@@ -50,7 +47,7 @@ const FilterSection = ({
         onChange={(_, newValue) => {
           setTaskType(newValue);
         }}
-        sx={{ width: 200 }}
+        sx={{ width: { xs: 145, sm: 180, md: 200 } }}
         renderInput={(params) => (
           <TextField {...params} label="Type de tâches" variant="outlined" />
         )}
@@ -62,7 +59,7 @@ const FilterSection = ({
         onChange={(_, newValue) => {
           setTaskStatus(newValue);
         }}
-        sx={{ width: 160 }}
+        sx={{ width: { xs: 145, sm: 180, md: 200 } }}
         renderInput={(params) => (
           <TextField {...params} label="Etat" variant="outlined" />
         )}
@@ -74,7 +71,7 @@ const FilterSection = ({
         onChange={(_, newValue) => {
           setSelectedUser(newValue);
         }}
-        sx={{ width: 160 }}
+        sx={{ width: { xs: 145, sm: 180, md: 200 } }}
         renderInput={(params) => (
           <TextField {...params} label="Utilisateur" variant="outlined" />
         )}
@@ -86,7 +83,7 @@ const FilterSection = ({
         onChange={(_, newValue) => {
           setTaskPriority(newValue);
         }}
-        sx={{ width: 160 }}
+        sx={{ width: { xs: 145, sm: 180, md: 200 } }}
         renderInput={(params) => (
           <TextField {...params} label="Priorité" variant="outlined" />
         )}
@@ -100,31 +97,38 @@ const FilterSection = ({
           marginLeft: "auto",
         }}
       >
-        <Button
-          variant="outlined"
-          sx={{
-            borderColor: "#D9D9D9",
-            borderRadius: "500px",
-            padding: "1rem 2rem",
-            fontSize: "0.75rem",
-          }}
-          onClick={handleResetFilters}
-          startIcon={<CloseIcon />}
-        >
-          réinitialiser
-        </Button>
-        <Button
-          variant="contained"
-          sx={{
-            borderRadius: "500px",
-            padding: "1rem 2rem",
-            fontSize: "0.75rem",
-          }}
-          onClick={getFiltersValues}
-          startIcon={<FilterAltOutlinedIcon />}
-        >
-          Filter
-        </Button>
+        {/* Show reset button only when user select inputs */}
+        {taskType || taskStatus || selectedUser || taskPriority ? (
+          <Button
+            variant="outlined"
+            sx={{
+              borderColor: "#D9D9D9",
+              borderRadius: "500px",
+              padding: { xs: "0.5rem 1rem", sm: "0.75rem 1.5rem" },
+              fontSize: { xs: "0.675rem", sm: "0.725rem" },
+            }}
+            onClick={handleResetFilters}
+            startIcon={<CloseIcon />}
+          >
+            réinitialiser
+          </Button>
+        ) : null}
+
+        {/* show filter button only when user choose one input or more */}
+        {taskType || taskStatus || selectedUser || taskPriority ? (
+          <Button
+            variant="contained"
+            sx={{
+              borderRadius: "500px",
+              padding: { xs: "0.5rem 1rem", sm: "0.75rem 1.5rem" },
+              fontSize: { xs: "0.675rem", sm: "0.725rem" },
+            }}
+            onClick={getFiltersValues}
+            startIcon={<FilterAltOutlinedIcon />}
+          >
+            Filter
+          </Button>
+        ) : null}
       </Box>
     </Stack>
   );
