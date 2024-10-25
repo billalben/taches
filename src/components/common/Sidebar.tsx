@@ -42,8 +42,6 @@ const Sidebar = () => {
 
   const { pathname } = useLocation();
 
-  console.log(pathname);
-
   const handleToggleSidebar = () => {
     setIsOpen(!isOpen);
   };
